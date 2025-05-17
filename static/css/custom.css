@@ -1,0 +1,9 @@
+img[src*="login_logo.svg"] {
+    max-width: 200px !important;
+    height: auto !important;
+}
+
+img[src*="site_logo.svg"] {
+    max-width: 150px !important;
+    filter: brightness(0) invert(1);
+  }

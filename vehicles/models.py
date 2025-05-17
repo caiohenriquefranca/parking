@@ -15,7 +15,7 @@ class VehicleType(models.Model):
     )
 
     class Meta:
-        verbose_name = 'Tipo de Veículo',
+        verbose_name = 'Tipo de Veículo'
         verbose_name_plural = 'Tipos de Veículos'
 
     def __str__(self):

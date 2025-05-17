@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+import os
+from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -120,8 +122,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = 'static/'
-STATICFILES_DIR = [BASE_DIR/ 'static']
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [BASE_DIR/ "static"]
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # Default primary key field type
@@ -143,7 +145,7 @@ JAZZMIN_SETTINGS = {
     "site_logo": "images/site_logo.svg",
 
     # Logo to use for your site, must be present in static files, used for login form logo (defaults to site_logo)
-    "login_logo": "image/login_logo.svg",
+    "login_logo": "images/login_logo.svg",
 
     # Logo to use for login form in dark themes (defaults to login_logo)
     # "login_logo_dark": None,
@@ -158,7 +160,7 @@ JAZZMIN_SETTINGS = {
     "welcome_sign": "Bem vindo ao Parking Service",
 
     # Copyright on the footer
-    "copyright": "Desenvolvido por Dev.Caio Henrique",  
+    "copyright": "Parking Service",  
 
     # List of model admins to search from the search bar, search bar omitted if excluded
     # If you want to use a single search field you dont need to use a list, you can use a simple string 
@@ -193,8 +195,8 @@ JAZZMIN_SETTINGS = {
 
     # Additional links to include in the user menu on the top right ("app" url type is not allowed)
     "usermenu_links": [
-        {"name": "Support", "url": "https://github.com/farridav/django-jazzmin/issues", "new_window": True},
-        {"model": "auth.user"}
+        {"model": "auth.user"},
+        {"name": "Suporte", "url": "https://github.com/farridav/django-jazzmin/issues", "new_window": True, "icon": "fas fa-life-ring"}
     ],
 
     #############
@@ -273,4 +275,5 @@ JAZZMIN_SETTINGS = {
     "changeform_format_overrides": {"auth.user": "collapsible", "auth.group": "vertical_tabs"},
     # Add a language dropdown into the admin
     # "language_chooser": True,
+    "custom_css": "css/custom.css",
 }
